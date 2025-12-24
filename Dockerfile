@@ -1,5 +1,6 @@
-cat <<EOF > Dockerfile
-FROM ubuntu:20.04
-RUN apt-get update && apt-get install -y nginx
+FROM nginx:latest
+
+COPY index.html /usr/share/nginx/html/
+
 CMD ["nginx", "-g", "daemon off;"]
-EOF
+
